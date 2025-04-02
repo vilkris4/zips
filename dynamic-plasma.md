@@ -110,7 +110,7 @@ maxContractBlocks := MaxBasePlasmaInMomentum / EmbeddedSimplePlasma // 80 blocks
 
 // Validate account block rules
 for _, block := range momentum.Blocks {
-	if IsEmbeddedAddress(block.Address) {
+      if IsEmbeddedAddress(block.Address) {
       // Validate contract account block count
       contractBlockCount++
       if contractBlockCount > maxContractBlocks {
@@ -136,7 +136,7 @@ for _, block := range momentum.Blocks {
       if totalBasePlasma > MaxBasePlasmaInMomentum {
         panic("exceeded maximum allowed base plasma in momentum")
       }
-	}
+    }
 }
 
 // Calculate and validate next fusion price
@@ -156,7 +156,7 @@ if nextFusionPrice < MinResourcePrice {
 }
 
 if nextFusionPrice != momentum.FusionPrice {
-	panic("mismatch in momentum fusion price")
+    panic("mismatch in momentum fusion price")
 }
 
 // Calculate and validate next work price
@@ -168,7 +168,7 @@ maxNextPrice = workPrice * (MaxPriceChangePercent + 100) / 100
 minNextPrice = workPrice * (100 - MaxPriceChangePercent) / 100
 
 if nextWorkPrice < MinResourcePrice {
-	nextWorkPrice = MinResourcePrice
+    nextWorkPrice = MinResourcePrice
 } else if nextWorkPrice < minNextPrice {
     nextWorkPrice = minNextPrice
 } else if nextWorkPrice > maxNextPrice {
@@ -176,7 +176,7 @@ if nextWorkPrice < MinResourcePrice {
 }
 
 if nextWorkPrice != momentum.WorkPrice {
-	panic("mismatch in momentum work price")
+    panic("mismatch in momentum work price")
 }
 
 // Rest of momentum validation...
