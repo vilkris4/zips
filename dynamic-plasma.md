@@ -36,7 +36,7 @@ This ZIP has drawn inspiration from Ethereum's base fee adjustment mechanism pre
 
 # Specification
 ## Momentum data structure and hash
-FusionPrice and WorkPrice properties are added to the momentum data structure and are included in the momentum hash.
+NextFusionPrice and NextWorkPrice properties are added to the momentum data structure and are included in the momentum hash.
 
 ```go
 type DynamicPlasmaMomentum struct {
@@ -59,8 +59,8 @@ type DynamicPlasmaMomentum struct {
 	PublicKey ed25519.PublicKey
 	Signature []byte            
 
-	FusionPrice uint64
-	WorkPrice   uint64
+	NextFusionPrice uint64
+	NextWorkPrice   uint64
 }
 ```
 
