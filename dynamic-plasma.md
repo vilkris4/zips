@@ -307,4 +307,4 @@ While account block ordering is not a part of this ZIP's specification, all impl
 
 # Reference Implementation
 
-To be provided
+https://github.com/hypercore-one/hyperqube_z/tree/feature/dynamic_plasma
